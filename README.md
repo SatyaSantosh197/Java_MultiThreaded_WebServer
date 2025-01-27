@@ -57,8 +57,8 @@ Java_MultiThreaded_WebServer/
 ```
 
 ## Future Enhancements
-  -[ ] Support for HTTP/1.1 features like persistent connections.
-  -[ ] Dynamic content serving (e.g., database integration, API support).
+  - [ ] Support for HTTP/1.1 features like persistent connections.
+  - [ ] Dynamic content serving (e.g., database integration, API support).
 
 ## Acknowledgements
   - IIT Hyderabad: Tutorial on building a multi-threaded web server.
