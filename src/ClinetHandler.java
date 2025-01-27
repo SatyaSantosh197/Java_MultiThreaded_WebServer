@@ -47,13 +47,21 @@ final class ClinetHandler implements Runnable {
         tokens.nextToken();
         String fileName = tokens.nextToken();
 
-        fileName = "." + fileName;
+        if(fileName.equals("/")) {
+            fileName = "/index.html";
+        }
+
+        fileName = "./src" + fileName;
+
+        System.out.println("Current Working Directory: " + new File(".").getAbsolutePath());
 
         FileInputStream fileInputStream = null;
         boolean fileExists = true;
         try {
             fileInputStream = new FileInputStream(fileName);
+            System.out.println("FileInputStream opened successfully for: " + fileName);
         } catch(FileNotFoundException e) {
+            System.out.println("FileInputStream error: " + e.getMessage());
             fileExists = false;
         }
 
@@ -79,6 +87,7 @@ final class ClinetHandler implements Runnable {
         outputStream.writeBytes(CRLF);
 
         if(fileExists) {
+
             sendBytes(fileInputStream, outputStream);
             fileInputStream.close();
         } else {

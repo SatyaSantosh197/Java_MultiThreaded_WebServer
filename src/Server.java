@@ -5,7 +5,7 @@ import java.net.*;
 public final class Server {
     public static void main(String[] args) throws Exception {
         // Set the port number.
-        int port = 6789;
+        int port = 3000;
 
         // Establish the listen socket.
         ServerSocket serverSocket = new ServerSocket(port);
